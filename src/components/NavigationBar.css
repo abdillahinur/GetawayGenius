@@ -1,0 +1,29 @@
+/* NavigationBar.css */
+nav {
+    background-color: #C4A484; /* Primary color */
+    padding: 10px 20px; /* Padding around the navigation */
+  }
+  
+  ul {
+    list-style: none; /* Remove default list styling */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Layout items horizontally */
+    justify-content: space-around; /* Space items evenly */
+  }
+  
+  li {
+    margin-top: 0; /* Adjust top margin if needed */
+  }
+  
+  a {
+    color: white; /* Text color for links */
+    text-decoration: none; /* Remove underline from links */
+    padding: 5px; /* Padding for clickable area */
+    border-radius: 5px; /* Rounded corners for links */
+  }
+  
+a:hover {
+    background-color: #967e66; /* Darker blue on hover/active */
+  }
+  
