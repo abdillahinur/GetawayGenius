@@ -33,6 +33,7 @@ const AiwithText = () => {
 
     const renderItineraryTable = (text) => {
         const rows = text.split('\n').filter(row => row.trim().length > 0 && row.includes('|')).map(row => row.split('|').filter(cell => cell.trim() !== ''));
+    
         return (
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                 <thead>
@@ -45,15 +46,20 @@ const AiwithText = () => {
                 <tbody>
                     {rows.slice(2).map((row, index) => (
                         <tr key={index}>
-                            {row.map((cell, cellIndex) => (
-                                <td key={cellIndex} style={{ border: '1px solid #ddd', padding: '8px' }}>{cell.trim()}</td>
-                            ))}
+                            {row.map((cell, cellIndex) => {
+                                // Check if it's the "Day" column and remove asterisks
+                                const cleanedCell = cellIndex === 0 ? cell.trim().replace(/\*/g, '') : cell.trim();
+                                return (
+                                    <td key={cellIndex} style={{ border: '1px solid #ddd', padding: '8px' }}>{cleanedCell}</td>
+                                );
+                            })}
                         </tr>
                     ))}
                 </tbody>
             </table>
         );
     };
+    
 
     return (
         <div>
