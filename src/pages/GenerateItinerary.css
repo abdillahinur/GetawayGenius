@@ -1,0 +1,19 @@
+.itinerary-table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures that border spacing is collapsed into a single border */
+    margin-top: 20px;
+}
+
+.itinerary-table th, .itinerary-table td {
+    border: 1px solid #ccc; /* Adds a grey border around each cell */
+    padding: 8px; /* Adds padding inside each cell for better text readability */
+    text-align: left; /* Aligns text to the left */
+}
+
+.itinerary-table th {
+    background-color: #f2f2f2; /* A light grey background for headers */
+}
+
+.itinerary-table tbody tr {
+    border-top: 2px solid black; /* Adds a thicker black border at the top of each row for better separation */
+}
