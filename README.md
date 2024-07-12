@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# TripTuner
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+The Itinerary Generator is a React-based web application designed to create detailed travel itineraries using the power of generative AI. Utilizing the Google Generative AI API, users can input specific travel criteria such as destinations, dates, budget, group size, and personal preferences to receive a customized travel plan. The application also supports exporting the generated itinerary as a PDF document, allowing users to save or share their travel plans easily.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Custom Itinerary Generation**: Users can generate travel itineraries by specifying start and end dates, destinations, group size, budget, and additional notes.
+- **Multiple Destinations**: The application supports input for multiple travel destinations within a single itinerary.
+- **PDF Export**: Users can export the generated itinerary to a PDF file, making it easy to print or share.
+- **Dynamic Input Fields**: Users can dynamically add or remove destination fields as needed to customize their itinerary requests.
+- **Responsive Design**: The app is built with a responsive design, making it accessible on both desktop and mobile devices.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **React**: Used for building the user interface.
+- **React DatePicker**: Utilized for selecting dates.
+- **Google Generative AI API**: Powers the backend AI model that generates itineraries based on user input.
+- **jsPDF**: Library used for generating PDF documents from the itinerary content.
+- **html2canvas**: Captures snapshots of the DOM to render as images in the PDF documents.
 
-### `npm test`
+## Setup and Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Clone the Repository**:
 
-### `npm run build`
+2. **Install Dependencies**:
+cd itinerary-generator
+npm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. **Run the Application**:
+npm start
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To use the Trip Tuner, follow these steps:
 
-### `npm run eject`
+1. **Start the Application**: Run the application locally by executing `npm start`.
+2. **Input Itinerary Details**: Enter the required fields such as dates, destinations, budget, etc.
+3. **Generate Itinerary**: Click on the 'Generate' button to request the AI to create your itinerary based on the inputs provided.
+4. **Export PDF**: Once the itinerary is displayed, use the 'Export as PDF' button to download the itinerary as a PDF file.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Contributing
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Contributions are welcome, and any feedback or suggestions are appreciated. P
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## License
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+[MIT License](https://opensource.org/licenses/MIT)
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
