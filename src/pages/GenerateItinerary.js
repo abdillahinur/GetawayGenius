@@ -59,7 +59,7 @@ const GenerateItinerary = () => {
         setLoading(false);
     }
 
-    const exportPDF = () => {
+    const exportPDF = () => { // Need to update to incorporate PDF more than 1 page... currently retrofits all itinerary onto one page
         if (ref.current) {
             html2canvas(ref.current, {
                 scale: 2, // Increase the scale for better resolution
