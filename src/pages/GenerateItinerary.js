@@ -6,7 +6,8 @@ import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 
 const GenerateItinerary = () => {
-    const genAI = new GoogleGenerativeAI('AIzaSyDXxBk0O2i9-bRvWEgycp95F1RmfQN5Z3A');
+    const apiKey = import.meta.env.apiKey;
+    const genAI = new GoogleGenerativeAI(apiKey);
     const [formDetails, setFormDetails] = useState({
         startDate: new Date(),
         endDate: new Date(),
