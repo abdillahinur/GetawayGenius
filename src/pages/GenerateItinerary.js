@@ -6,7 +6,9 @@ import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 
 const GenerateItinerary = () => {
-    const apiKey = import.meta.env.apiKey;
+    const apiKey = process.env.REACT_APP_API_KEY;
+    console.log('API Key:', apiKey);  // Add this line to debug the API key value
+
     const genAI = new GoogleGenerativeAI(apiKey);
     const [formDetails, setFormDetails] = useState({
         startDate: new Date(),
@@ -54,21 +56,26 @@ const GenerateItinerary = () => {
         setLoading(true);
         const { startDate, endDate, destinations, groupSize, budget, currency, notes } = formDetails;
         const prompt = `Create a detailed vacation itinerary from ${startDate.toDateString()} to ${endDate.toDateString()} for destinations ${destinations.join(', ')} with a group of ${groupSize} people, budget ${budget} ${currency}, notes: ${notes}`;
-        const result = await genAI.getGenerativeModel({ model: "gemini-pro" }).generateContent(prompt);
-        const text = await result.response.text();
-        setResponse(text);
-        setLoading(false);
+        try {
+            const result = await genAI.getGenerativeModel({ model: "gemini-pro" }).generateContent(prompt);
+            const text = await result.response.text();
+            setResponse(text);
+        } catch (error) {
+            console.error('Error generating content:', error);
+        } finally {
+            setLoading(false);
+        }
     }
 
-    const exportPDF = () => { // Need to update to incorporate PDF more than 1 page... currently retrofits all itinerary onto one page
+    const exportPDF = () => { 
         if (ref.current) {
             html2canvas(ref.current, {
-                scale: 2, // Increase the scale for better resolution
-                useCORS: true // This helps with loading images from external URLs
+                scale: 2, 
+                useCORS: true 
             }).then(canvas => {
                 const imgData = canvas.toDataURL('image/png');
-                const pdfWidth = canvas.width * 0.264583; // Convert pixels to mm
-                const pdfHeight = canvas.height * 0.264583; // Convert pixels to mm
+                const pdfWidth = canvas.width * 0.264583; 
+                const pdfHeight = canvas.height * 0.264583;
                 const pdf = new jsPDF({
                     orientation: pdfWidth > pdfHeight ? 'l' : 'p',
                     unit: 'mm',
@@ -83,7 +90,6 @@ const GenerateItinerary = () => {
     const renderItineraryTable = (text) => {
         if (!text) return <p>No itinerary data available.</p>;
     
-        // Split the text by double new lines to identify separate days or sections
         const sections = text.split('\n\n').filter(section => section.trim().length > 0);
     
         if (!sections.length) return <p>No valid itinerary data found.</p>;
@@ -100,7 +106,7 @@ const GenerateItinerary = () => {
                     {sections.map((section, index) => {
                         const parts = section.split('\n').filter(line => line.trim().length > 0);
                         const header = parts[0];
-                        const activities = parts.slice(1).join(', ');  // Combine all activities into a single string
+                        const activities = parts.slice(1).join(', ');
                         return (
                             <tr key={index}>
                                 <td>{header}</td>
@@ -112,8 +118,6 @@ const GenerateItinerary = () => {
             </table>
         );
     };
-    
-    
 
     return (
         <div>
