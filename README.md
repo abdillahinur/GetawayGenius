@@ -1,8 +1,8 @@
-# TripTuner
+# GetawayGenius
 
 ## Overview
 
-TripTuner is a React-based web application designed to create detailed travel itineraries using the power of generative AI. Using Google's Generative AI API, users can input specific travel criteria such as destinations, dates, budget, group size, and personal preferences to receive a customized travel plan. The application also supports exporting the generated itinerary as a PDF document, allowing users to save or share their travel plans easily.
+GetawayGenius is a React-based web application designed to create detailed travel itineraries using the power of generative AI. Using Google's Generative AI API, users can input specific travel criteria such as destinations, dates, budget, group size, and personal preferences to receive a customized travel plan. The application also supports exporting the generated itinerary as a PDF document, allowing users to save or share their travel plans easily.
 
 ## Features
 
