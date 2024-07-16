@@ -11,7 +11,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1>TripTuner AI App!</h1>
+      <h1>Getaway Genius AI App!</h1>
       <p>Built using ReactJS + Redux + Google Gemini</p>
 
       <div style={{ margin: '30px 0' }}>
