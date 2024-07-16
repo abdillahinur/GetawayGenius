@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import AiwithText from '../components/AIwithText';
-import AiwithImage from '../components/AIwithImage';
+
 
 
 const Home = () => {
@@ -29,13 +28,6 @@ const Home = () => {
           AI with Image
         </button>
       </div>
-
-      {
-        aiWith == 'text' ?
-          <AiwithText />
-          :
-          <AiwithImage />
-      }
     </div>
   );
 };
